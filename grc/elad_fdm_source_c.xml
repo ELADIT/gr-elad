@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<block>
+  <name>FDM Source</name>
+  <key>elad_fdm_source_c</key>
+  <category>elad</category>
+  <import>import elad</import>
+  <make>elad.fdm_source_c(LOfreq=$LOfreq,
+	filter=$filter,
+	atten=$atten,
+	serial=$serial,
+	resampling=$resampling)
+  </make>
+
+  <param>
+        <name>LO frequency</name>
+        <key>LOfreq</key>
+        <type>int</type>
+  </param>
+
+  <param>
+        <name>Filters</name>
+        <key>filter</key>
+        <value>1</value>
+        <type>int</type>
+        <hide>part</hide>
+  <option>
+        <name>Bypass</name>
+        <key>0</key>
+  </option>
+  <option>
+        <name>LP(S1/DUO)/From hwLO(S2)</name>
+        <key>1</key>
+  </option>
+  </param>
+
+  <param>
+        <name>Input Attenuator</name>
+        <key>atten</key>
+        <value>0</value>
+        <type>int</type>
+        <hide>part</hide>
+  <option>
+        <name>OFF</name>
+        <key>0</key>
+  </option>
+  <option>
+        <name>ON</name>
+        <key>1</key>
+  </option>
+  </param>
+
+  <param>
+        <name>Serial</name>
+        <key>serial</key>
+        <type>string</type>
+  </param>
+
+  <param>
+        <name>Resampling</name>
+        <key>resampling</key>
+        <value>192000</value>
+        <type>int</type>
+        <hide>part</hide>
+  <option>
+        <name>192000</name>
+        <key>192000</key>
+  </option>
+  <option>
+        <name>384000</name>
+        <key>384000</key>
+  </option>
+  <option>
+        <name>768000</name>
+        <key>768000</key>
+  </option>
+  <option>
+        <name>1536000</name>
+        <key>1536000</key>
+  </option>
+  <option>
+        <name>3072000</name>
+        <key>3072000</key>
+  </option>
+  <option>
+        <name>6144000</name>
+        <key>6144000</key>
+  </option>
+  </param>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>
